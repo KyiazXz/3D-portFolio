@@ -15,7 +15,7 @@ export default function Cube() {
             <PerspectiveCamera makeDefault position={[0,0,2]}/> 
             <color attach="background" args={["white"]}/>
             <Text fontSize={0.5} color="black" >
-                wowfdsf
+              0101
             </Text>
         </RenderTexture>
     </meshLambertMaterial>
