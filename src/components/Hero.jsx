@@ -1,9 +1,10 @@
 
-import {  OrbitControls,MeshDistortMaterial,Sphere } from '@react-three/drei'
+import {  OrbitControls,MeshDistortMaterial,Sphere,Stage } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import React, { Suspense } from "react";
 import styled from 'styled-components'
 import Navbar from './Navbar'
+import Mach from "./Mach"
 
 
 const Section = styled.div`
@@ -135,7 +136,7 @@ const Hero = () => {
         </Left>
         <Right>
           <Canvas>
-            <Suspense fallback={null}>
+            {/* <Suspense fallback={null}>
               <OrbitControls enableZoom={false} />
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
@@ -147,9 +148,17 @@ const Hero = () => {
                   speed={2}
                 />
               </Sphere>
-            </Suspense>
+            </Suspense> */}
+            <OrbitControls enableZoom={false} autoRotate={true}/>
+            <ambientLight intensity={1}/>
+            <directionalLight position={[3,2,1]} />
+  <Stage environment='city' intensity={1}>
+    <Mach />
+  </Stage>
+
+<OrbitControls enableZoom={false} />
           </Canvas>
-          <Img src="./img/moon.png" />
+          {/* <Img src="./img/moon.png" /> */}
         </Right>
       </Container>
     </Section>
