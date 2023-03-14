@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, lazy } from 'react'
 import styled from 'styled-components'
-import { Development } from './Development';
-import ProductDesign from './ProductDesign';
-import WebDesign from './WebDesign';
+import {MercedesBenzAMG}  from './carsImageFile/MercedesBenzAMG'
+import  MercedesAMGONE from './carsImageFile/MercedesAMGONE'
 
 
 const data = [
-  "Web Design",
-  "Development",
-  "Illustration",
-  "Product Design",
-  "Social Media",
+  "Mercedes-AMG ONE",
+  "2020 Mercedes-Benz AMG",
 ];
 
 const Section = styled.div`
@@ -53,14 +49,14 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  font-size: 90px;
+  font-size: 50px;
   font-weight: bold;
   cursor: pointer;
   color: transparent;
   -webkit-text-stroke: 1px white;
   position: relative;
   @media only screen and (max-width: 768px) {
-    font-size: 24px;
+    font-size: 15px;
     color: white;
     -webkit-text-stroke: 0px;
   }
@@ -74,16 +70,7 @@ const ListItem = styled.li`
     overflow: hidden;
     white-space: nowrap;
   }
-  &:hover {
-    ::after {
-      animation: moveText 0.6s linear both;
-      @keyframes moveText {
-        to {
-          width: 100%;
-        }
-      }
-    }
-  }
+
 `;
 
 const Right = styled.div`
@@ -92,7 +79,7 @@ const Right = styled.div`
 
 
 export default function Works() {
-  const [work , setWork] = useState("Web Design")
+  const [work , setWork] = useState("Mercedes-AMG ONE")
   return (
     <Section>
       <Container>
@@ -107,12 +94,12 @@ export default function Works() {
         </Left>
 
         <Right>
-              {work === "Web Design" ? (
-                <WebDesign/>
-              ): work === "Development" ? (
-                <Development/>
+              {work === "Mercedes-AMG ONE" ? (
+                <MercedesAMGONE/>
+              ): work === "2020 Mercedes-Benz AMG" ? (
+                <MercedesBenzAMG/>
               ): (
-                <ProductDesign /> 
+                <></>
               )}
 
         </Right>

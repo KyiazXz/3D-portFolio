@@ -1,8 +1,9 @@
 import React from 'react'
-import { Float, OrbitControls, RenderTexture,Text, PerspectiveCamera  } from '@react-three/drei'
+import { Float, OrbitControls, RenderTexture,Text, PerspectiveCamera,Stage  } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import styled from 'styled-components'
-import Cube from './Cube'
+import Mers from "./threeDmers/Mers"
+
 
 
 const Section = styled.div`
@@ -82,23 +83,25 @@ export default function Who() {
     <Section>
 <Left>
 <Canvas>
-            <OrbitControls enableZoom={false} autoRotate={true}/>
+<OrbitControls enableZoom={false} autoRotate={true}/>
             <ambientLight intensity={1}/>
             <directionalLight position={[3,2,1]} />
-            
-            <Cube/>
+  <Stage environment='city' intensity={0.6}>
+    <Mers />
+  </Stage>
+
+<OrbitControls enableZoom={false} />
 </Canvas>
 </Left>
 
 <Right>
-          <Title>Think outside the square space</Title>
-            <Subtitle>Who we Are</Subtitle>
+          <Title>Mercedes-AMG Project ONE</Title>
+            <Subtitle>a price of USD $2.72 million per unit</Subtitle>
           
           <Desc>
-            a creative group of designers and developers with a passion for the
-            arts.
+          On June 1, 2022, Mercedes-AMG revealed the production version of the AMG ONE. Production of the car began in August 2022. Currently, the car is the cover car for Forza Horizon 5.
           </Desc>
-          <Button>See our works</Button>
+          <Button><a href='https://en.wikipedia.org/wiki/Mercedes-AMG_ONE#:~:text=The%20production%20version%20of%20the%20AMG%20ONE%20unveiled%20on%20June,which%20have%20been%20already%20sold.' >Click </a></Button>
 </Right>
     </Section>
   )

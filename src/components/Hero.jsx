@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import React, { Suspense } from "react";
 import styled from 'styled-components'
 import Navbar from './Navbar'
-import Mach from "./Mach"
+
 
 
 const Section = styled.div`
@@ -125,40 +125,16 @@ const Hero = () => {
       <Navbar />
       <Container>
         <Left>
-          <Title>Think. Make. Solve.</Title>
+          <Title>Kyiaz Zholdoshev</Title>
           <WhatWeDo>
-            <Subtitle>What we Do</Subtitle>
           </WhatWeDo>
           <Desc>
-            we enjoy creating delightful, human-centered digital experiences.
+            Frontend developer
           </Desc>
           <Button>Learn More</Button>
         </Left>
         <Right>
-          <Canvas>
-            {/* <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
-              <ambientLight intensity={1} />
-              <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1.2, 100, 700]} scale={2.4}>
-                <MeshDistortMaterial
-                  color="#3d1c56"
-                  attach="material"
-                  distort={0.5}
-                  speed={2}
-                />
-              </Sphere>
-            </Suspense> */}
-            <OrbitControls enableZoom={false} autoRotate={true}/>
-            <ambientLight intensity={1}/>
-            <directionalLight position={[3,2,1]} />
-  <Stage environment='city' intensity={1}>
-    <Mach />
-  </Stage>
-
-<OrbitControls enableZoom={false} />
-          </Canvas>
-          {/* <Img src="./img/moon.png" /> */}
+          <Img src="./img/moon.png" alt='space' />
         </Right>
       </Container>
     </Section>
